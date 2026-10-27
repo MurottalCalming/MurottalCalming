@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f6ef">
+  
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <meta name="description" content="Murottal Calming — baca Al-Qur'an dengan teks Arab, latin, terjemahan Indonesia, dan dengarkan murottal yang menenangkan hati.">
+  <title>Murottal Calming — Tenangkan Hati dengan Al-Qur'an</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <header class="navbar">
+    <a class="brand" href="#home">
+      <span class="brand-icon">☾</span>
+      <span>Murottal <b>Calming</b></span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Beranda</a>
+      <a href="#quran">Baca Al-Qur'an</a>
+      <a href="#about">Tentang</a>
+      <a href="#social">Media Sosial</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <span class="eyebrow">RUANG TENANG UNTUK JIWA</span>
+        <h1>Tenangkan Hati,<br><em>Dekatkan Diri</em><br>kepada Ilahi.</h1>
+        <p>
+          Luangkan sejenak waktumu. Baca ayat suci Al-Qur'an,
+          resapi maknanya, dan temukan ketenangan dalam setiap lantunan.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#quran">Mulai Membaca <span>↗</span></a>
+          <a class="btn btn-secondary" href="#about">Tentang Kami</a>
+        </div>
+        <div class="hero-note"><span>✦</span> Satu ayat, satu ketenangan.</div>
+      </div>
+
+      <div class="hero-art" aria-label="Ilustrasi dekoratif islami">
+        <div class="art-circle"></div>
+        <div class="art-moon">☾</div>
+        <div class="art-star star-one">✦</div>
+        <div class="art-star star-two">✧</div>
+        <div class="art-arch">
+          <div class="arch-inner">
+            <span class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
+            <span class="arch-divider"></span>
+            <span class="arch-caption">Sebaik-baik penenang hati<br>adalah mengingat Allah.</span>
+          </div>
+        </div>
+        <div class="art-label">بِسْمِ اللَّهِ</div>
+      </div>
+    </section>
+
+    <section class="features">
+      <article class="feature">
+        <span class="feature-icon">۞</span>
+        <h3>Baca Al-Qur'an</h3>
+        <p>Jelajahi surah dan ayat Al-Qur'an dengan nyaman.</p>
+      </article>
+      <article class="feature">
+        <span class="feature-icon">♫</span>
+        <h3>Dengarkan Murottal</h3>
+        <p>Putar lantunan ayat untuk menemani waktu tenangmu.</p>
+      </article>
+      <article class="feature">
+        <span class="feature-icon">✧</span>
+        <h3>Pahami Maknanya</h3>
+        <p>Ikuti teks latin dan terjemahan Bahasa Indonesia.</p>
+      </article>
+    </section>
+
+    <section class="quran-section" id="quran">
+      <div class="section-heading">
+        <span class="eyebrow">JELAJAHI KITAB SUCI</span>
+        <h2>Temukan Kedamaian <em>dalam Ayat-Nya</em></h2>
+        <p>Pilih surah yang ingin kamu baca dan dengarkan.</p>
+      </div>
+
+      <div class="reader">
+        <aside class="surah-sidebar">
+          <h3>Daftar Surah</h3>
+          <label class="search-box">
+            <span>⌕</span>
+            <input type="search" id="surahSearch" placeholder="Cari nama surah..." aria-label="Cari surah">
+          </label>
+          <div class="surah-list" id="surahList">
+            <p class="loading">Memuat daftar surah...</p>
+          </div>
+        </aside>
+
+        <div class="reader-main">
+          <div class="surah-heading">
+            <div>
+              <span class="eyebrow" id="surahMeta">SURAH PILIHAN</span>
+              <h3 id="surahName">Al-Fatihah</h3>
+              <p id="surahTranslation">Pembukaan</p>
+            </div>
+            <div class="surah-arabic-name" id="surahArabicName">الفاتحة</div>
+          </div>
+
+          <div class="audio-card">
+            <div class="audio-info">
+              <span class="audio-symbol">♫</span>
+              <div>
+                <strong>Dengarkan Murottal</strong>
+                <p id="audioCaption">Mishary Rashid Alafasy</p>
+              </div>
+            </div>
+            <audio id="quranAudio" controls preload="none">
+              Browser kamu belum mendukung pemutar audio.
+            </audio>
+            <p class="audio-note">Audio membutuhkan koneksi internet.</p>
+          </div>
+
+          <div class="reading-controls">
+            <label class="toggle-label">
+              <input type="checkbox" id="showLatin" checked>
+              <span>Teks Latin</span>
+            </label>
+            <label class="toggle-label">
+              <input type="checkbox" id="showTranslation" checked>
+              <span>Terjemahan</span>
+            </label>
+          </div>
+
+          <div class="ayah-list" id="ayahList">
+            <p class="loading">Menyiapkan ayat Al-Qur'an...</p>
+          </div>
+
+          <div class="surah-pagination">
+            <button class="btn btn-secondary" id="prevSurah">← Surah Sebelumnya</button>
+            <button class="btn btn-primary" id="nextSurah">Surah Berikutnya →</button>
+          </div>
+          <p class="source-note">
+            Teks dan audio disediakan melalui layanan AlQuran Cloud.
+            Periksa bacaan dengan mushaf tepercaya untuk memastikan ketepatan.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-section">
+      <span class="quote-symbol">❝</span>
+      <p>Ingatlah, hanya dengan mengingat Allah hati menjadi tenteram.</p>
+      <span class="quote-source">QS. Ar-Ra'd: 28 · Penggalan terjemahan</span>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="about-decoration">☾</div>
+      <div>
+        <span class="eyebrow">TENTANG MUROTTAL CALMING</span>
+        <h2>Ruang kecil untuk<br><em>ketenangan yang besar.</em></h2>
+      </div>
+      <div class="about-copy">
+        <p>
+          Murottal Calming hadir untuk menemani perjalananmu mendekat kepada
+          Allah melalui bacaan Al-Qur'an, lantunan murottal, dan pengingat
+          kebaikan setiap hari.
+        </p>
+        <a href="#quran" class="text-link">Mulai membaca Al-Qur'an ↗</a>
+      </div>
+    </section>
+
+    <section class="social-section" id="social">
+      <span class="eyebrow">CONNECT WITH US</span>
+      <h2>Temukan Ketenangan <em>Bersama Kami</em></h2>
+      <p>
+        Ikuti Murottal Calming untuk mendapatkan murottal,
+        pengingat islami, dan konten yang menenangkan hati.
+      </p>
+
+      <div class="social-links">
+        <a href="https://youtube.com/@murottalcalming?si=v2HpFIuhytZT7hr3"
+           target="_blank" rel="noopener noreferrer">
+          <span class="social-icon youtube">▶</span>
+          <span>YouTube</span><span class="social-arrow">↗</span>
+        </a>
+
+        <a href="https://www.tiktok.com/@murottalcalming.id?_r=1&_t=ZS-9Au1Ux0m47p"
+           target="_blank" rel="noopener noreferrer">
+          <span class="social-icon tiktok">♪</span>
+          <span>TikTok</span><span class="social-arrow">↗</span>
+        </a>
+
+        <a href="https://www.instagram.com/mrtlcalming?psln=OTBnZGE1OG90dDdw&utm_source=qr"
+           target="_blank" rel="noopener noreferrer">
+          <span class="social-icon instagram">◎</span>
+          <span>Instagram</span><span class="social-arrow">↗</span>
+        </a>
+
+        <a href="https://www.facebook.com/share/1FmvNyGnvx/?mibextid=wwXIfr"
+           target="_blank" rel="noopener noreferrer">
+          <span class="social-icon facebook">f</span>
+          <span>Facebook</span><span class="social-arrow">↗</span>
+        </a>
+      </div>
+
+      <div class="social-message">
+        <span>☾</span>
+        <p>Mari sebarkan kebaikan, satu ayat dalam satu waktu.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand footer-brand" href="#home">
+      <span class="brand-icon">☾</span>
+      <span>Murottal <b>Calming</b></span>
+    </a>
+    <p>Semoga setiap ayat membawa ketenangan dan kebaikan.</p>
+    <p class="copyright">© <span id="year"></span> Murottal Calming. Dibuat dengan niat baik.</p>
+  </footer>
+
+</body>
+</html>
